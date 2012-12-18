@@ -29,7 +29,7 @@
 		<echo>compilation of tests complete</echo>
 	</target>
         
-        <target name="all" depends="compile_tests" description="Build a jar and test apps.">
+        <target name="all" depends="archive" description="Build a jar and test apps.">
         </target>
 
 	<target name="clean" description="Clean up old files.">
