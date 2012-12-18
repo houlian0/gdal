@@ -42,7 +42,7 @@ cp /Users/jaak/git/gdal/gdal/swig/java/*_wrap.cpp ./
 cp /Users/jaak/git/gdal/gdal/swig/java/gdalconst_wrap.c ./
 
 # copy headers
-cp -r /Users/jaak/git/gdal/gdal/swig/java/org ../jniwrap/org
+cp -r /Users/jaak/git/gdal/gdal/swig/java/org ../jniwrap/
 
 # make Android.mk file:
 LOCAL_PATH := $(call my-dir)

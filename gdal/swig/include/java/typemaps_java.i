@@ -114,11 +114,6 @@
 %typemap(in) (GDALColorEntry *) (GDALColorEntry tmp) {
   /* %typemap(in) (GDALColorEntry *) (GDALColorEntry tmp) */
   $1 = NULL;
-  if ($input == NULL)
-  {
-      SWIG_JavaException(jenv, SWIG_ValueError, "Received a NULL pointer.");
-      return $null;
-  }
 
   tmp.c4 = ($input >> 24) & 0xff;
   tmp.c1 = ($input >> 16) & 0xff;
