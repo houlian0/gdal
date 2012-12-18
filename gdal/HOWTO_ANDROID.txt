@@ -1,12 +1,14 @@
 See http://trac.osgeo.org/gdal/wiki/BuildingForAndroid for basic instructions
 
+#download stuff and patch guess config
 cd /Users/jaak/tmp/gdal-1.9.0
 rm config.sub config.guess
 wget http://git.savannah.gnu.org/cgit/config.git/plain/config.sub
 wget http://git.savannah.gnu.org/cgit/config.git/plain/config.guess
+
+# set environment
 export PATH=/Users/jaak/android-8-toolchain/bin:$PATH
 export NDK_ROOT=/Users/jaak/dev/android-ndk-r7b
-
 
 # build gdal
 CFLAGS="-mthumb" CXXFLAGS="-mthumb" LIBS="-lsupc++ -lstdc++"  ./configure --host=arm-linux-androideabi --prefix=/Users/jaak/git/gdal/gdal/external/gdal
@@ -22,6 +24,10 @@ make install
 #make install-lib
 
 #generate swig bindings and wrappers
+
+# 1. patch typemaps_java.i as in this repo
+
+# 2. build swig wrappers (we use .cpp versions only)
 cd swig
 make
 cd java
